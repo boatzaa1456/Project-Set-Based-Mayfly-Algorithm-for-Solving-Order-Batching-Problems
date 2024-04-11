@@ -7,6 +7,7 @@ Project advisor: Assistant Professor Dr.Kwanniti Khammuang
 Academic: Naresuan University
 
 Major: Industrial Engineering
+
 Department: Industrial Engineering 
 
 Academic year: 2023
