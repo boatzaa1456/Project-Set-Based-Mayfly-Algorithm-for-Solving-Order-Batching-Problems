@@ -12,5 +12,6 @@ Department: Industrial Engineering
 
 Academic year: 2023
 
-Contact Info: surachetc63@nu.ac.th
+Contact Info: surachetchinnabut@hotmail.com
+
 
