@@ -1,3 +1,5 @@
+Bachelor's degree Project
+
 Project title: Solving the Order Batching Problem with Weight Consideration By a Set-Based Mayfly Algorithm 
 
 Developers: Mr.Surachet Chinnabut & Miss Chanisara Nookluay				
