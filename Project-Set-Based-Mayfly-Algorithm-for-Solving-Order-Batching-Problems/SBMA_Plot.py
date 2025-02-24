@@ -8,8 +8,8 @@ from  SBMA_Main import mayfly
 
 
 start_time = time.time()
-num_gen = 100
-pop_size = 50
+num_gen = 40
+pop_size = 20
 a1 = 1
 a2 = 2
 a3 = 2
@@ -22,7 +22,7 @@ gbest_each_gen = []
 male_each_gen = []
 female_each_gen = []
 
-name_path_input = '1R-20I-150C-2P'
+name_path_input = '1S-20I-150C-3P'
 df_item_pool = read_input(name_path_input)
 gbest_each_gen,best_solution = mayfly(name_path_input, num_gen, pop_size, a1, a2, a3, gmax, gmin,
                                 alpha, random_seed)

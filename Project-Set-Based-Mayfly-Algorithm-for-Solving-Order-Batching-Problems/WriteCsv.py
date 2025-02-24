@@ -1,7 +1,7 @@
 import pandas as pd
 import csv
 import random
-import SBMA_CheckBatch as mayfly
+import SBMA_Main as mayfly
 from tqdm import tqdm
 import time
 from datetime import datetime, timedelta
@@ -65,17 +65,17 @@ def print_estimated_completion_time(average_time, total_iterations):
         print(f"Estimated to take around {total_estimated_time / 86400:.2f} days.")
 
 
-name_path_input = '1R-20I-150C-2P'
+name_path_input = '1S-20I-150C-3P'
 df_item_pool, df_item_sas_random = read_input(name_path_input)
 
 # Parameter lists
-a1 = [1]
-a2 = [1.5]
-a3 = [1]
+a1 = [1,2]
+a2 = [1,2]
+a3 = [1,2]
 gmax = [0.9]
 gmin = [0.3]
 alpha = [0.5]
-num_pop = [(2,2)]
+num_pop = [(20,10),(10,20)]
 # seeds = [1132,1456,1975,2492,2820]
 # seeds = [1111,2222,3333,4444,5555,6666,7777,8888,9999,11110]
 seeds = [6666]
@@ -114,11 +114,11 @@ with tqdm(total=total_iterations, desc="Processing", file=sys.stdout) as pbar:
                                     my_seed = seeds[rep]
                                     random.seed(my_seed)
                                     start_time = time.time()  # Start timing
-                                    gbest_each_gen,best_solution ,gbest_value= mayfly.mayfly(name_path_input, ng, ps, x, y, z, gm, gmi, a, my_seed)
+                                    gbest_each_gen, best_solution,gbest_value = mayfly.mayfly(name_path_input, ng, ps, x, y, z, gm, gmi, a, my_seed)
                                     end_time = time.time()  # End timing
                                     duration = end_time - start_time  # Calculate duration
                                     current_num_pop = (ng, ps)
-                                    results.append([x, y, z, gm, gmi, a, current_num_pop, gbest_each_gen, rep, my_seed, duration,best_solution,gbest_value])  # Include duration in results
+                                    results.append([x, y, z, gm, gmi, a, current_num_pop, gbest_each_gen, rep, my_seed, duration,best_solution,gbest_value])
                                     pbar.update(1)
 
 # Writing results to a CSV file
